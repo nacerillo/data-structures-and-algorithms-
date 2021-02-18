@@ -26,7 +26,7 @@ const containsW = (str) => {
   // Solution code here...
   const regexToTest = /w+/gm;
   const output = regexToTest.test(str);
-  console.log('output',output);
+ // console.log('output',output);
   if(output){
     return true;
   }
@@ -49,18 +49,19 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-
-  const reg = new RegExp('^\\d+$');
+  var str = input.toString();
+  //console.log(str);
+ // const reg =  /^[0-9]*$/gm;
+  const reg = /\d/;
   //console.log(input);
-  const output = reg.test(input);
-  console.log(input,output);
+  const output = reg.test(str);
+  //console.log(str,output);
   if(output){
-    return false;
-  }
-  else{
     return true;
   }
-
+  else{
+    return false;
+  }
 
 };
 
@@ -73,6 +74,15 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  const reg =  /\bworld\b/; ///world/gm;
+  const output = reg.test(input);
+  //console.log(input,output);
+  if(output){
+    return true;
+  }
+  else{
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,6 +95,11 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+
+  const reg = /\b[A-Z].*?\b/gm;
+  const output = str.match(reg);
+  console.log(output);
+  return output;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,6 +110,19 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  const newarr = [];
+  arr.forEach(city => {
+    const reg = /\b^[A-J].*?\b/gm;
+    const output = reg.test(city);
+    if(output=== true){
+      newarr.push(city);
+    }
+    
+  })
+  //const reg = /\b[a-jA-J].*?\b/gm;
+  //const output = arr.match(reg);
+  //console.log(arr,newarr);
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------

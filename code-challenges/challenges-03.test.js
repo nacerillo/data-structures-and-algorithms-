@@ -27,7 +27,7 @@ const updateAnimal = (arr, callback) => {
    
     newstr.push(upper(i));
   });
-  console.log(newstr);
+ // console.log(newstr);
   return newstr.sort();
   // Solution code here...
 };
@@ -102,20 +102,18 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  //console.log(arr);
   arr.sort(function(x,y) {
-    x = x.toUpperCase();
-    y = y.toUpperCase();
-    if( x == y) {
-      return 0; 
-    }
-    else if (x > y) {
-      return -1;
-    }
-    else {
+ 
+     if (x > y) {
+     //  console.log(x, y);
       return 1;
     }
+    else {
+      return -1;
+    }
   });
-  console.log(arr);
+//console.log(arr);
 return arr;
 
 };
@@ -135,6 +133,18 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  console.log(arr);
+  arr.sort(function(x,y){
+    if(x.price < y.price){
+      return -1;
+    }
+    else{
+      return 1;
+    }
+  });
+  console.log(arr);
+  return arr;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -322,7 +332,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should sort items by their price', () => {
     expect(sortByPrice([
       {name: 'Sweatshirt', price: 45},

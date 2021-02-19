@@ -23,9 +23,10 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   const newstr = [];
-  arr.forEach(i => {
-   
-    newstr.push(upper(i));
+  arr.forEach(animal => {
+   //callback(animal);
+    console.log(callback(animal));
+    newstr.push(callback(animal));
   });
  // console.log(newstr);
   return newstr.sort();

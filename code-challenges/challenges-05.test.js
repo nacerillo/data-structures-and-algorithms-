@@ -32,13 +32,13 @@ const sortStarWarsCharacters = (starWarsArr) => {
       var x1 = parseInt(x.height);
       var y1 = parseInt(y.height);
     if(x1 > y1){
-      console.log(x1.height, y1.height);
-      console.log("hello");
+     // console.log(x1.height, y1.height);
+     // console.log("hello");
       return -1;
 
     }
     else if(x1 < y1) {
-      console.log("goodbye");
+    //  console.log("goodbye");
       return 1;
     }
     else {
@@ -56,7 +56,9 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+arr.splice(idx,3);
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,7 +68,11 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
+
   // Solution code here...
+  //arr.join(" ");
+  //console.log(arr.join(" "));
+  return arr.join(" ");;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +90,15 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
+  var pencil = str;
   // Solution code here...
+  for(var i = 0; i < str.length; i++){
+    var sharp = pencil.slice(i,str.length);
+    result.push(sharp);
+    //console.log(sharp);
+  }
+  result.push('');
+ // console.log(result);
   return result;
 };
 
@@ -98,6 +112,13 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+ let stringArr = [];
+
+ for(var i = 0; i < arr.length; i++){
+   stringArr.push(arr.charAt(i));
+ }
+ console.log(stringArr);
+ return stringArr;
 };
 
 
@@ -144,6 +165,10 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
+
+  recipe.forEach(item => {
+    
+  })
   // Solution code here...
   return result;
 };

@@ -25,7 +25,28 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
+  // Solution code here...\
+  //console.log(starWarsArr);
+ starWarsArr.sort(function(x,y) {
+  //console.log(x.height, y.height);
+      var x1 = parseInt(x.height);
+      var y1 = parseInt(y.height);
+    if(x1 > y1){
+      console.log(x1.height, y1.height);
+      console.log("hello");
+      return -1;
+
+    }
+    else if(x1 < y1) {
+      console.log("goodbye");
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  });
+  //console.log(starWarsArr);
+  return starWarsArr;
 }
 
 /* ------------------------------------------------------------------------------------------------

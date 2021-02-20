@@ -117,7 +117,7 @@ const wordsToCharList = (arr) => {
  for(var i = 0; i < arr.length; i++){
    stringArr.push(arr.charAt(i));
  }
- console.log(stringArr);
+//console.log(stringArr);
  return stringArr;
 };
 
@@ -164,13 +164,26 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
+  let results = [];
+console.log(recipe.ingredients);
+  recipe.ingredients.forEach(item => {
+    //console.log(item);
+    var spaces = 0;
+    for(var i = 0; i < item.length; i++){
+      if (item[i] === " ") {
+        spaces+=1;
+      }
+      if(spaces === 2){
+       // console.log(item.slice(i,item.length));
+        results.push(item.slice(i+1,item.length));
+        break;
+      }
 
-  recipe.forEach(item => {
-    
+    }
   })
   // Solution code here...
-  return result;
+  console.log(results)
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------

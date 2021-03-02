@@ -59,6 +59,9 @@ If it does, return true. If not, return false.
 
 const hasNumber = (string) => {
   // Solution code here...
+
+  return /\\d+[a-zA-Z]/.test(string);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,6 +109,7 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  return /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------

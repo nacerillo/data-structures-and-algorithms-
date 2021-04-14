@@ -36,7 +36,7 @@ const firstLetters = (arr) => {
   let newArr = arr.map((x) => {
     return x.charAt(0);
   });
-  console.log(arr, newArr);
+  // console.log(arr, newArr);
   return newArr;
 };
 
@@ -100,7 +100,7 @@ const onlyOddChars = (str) => {
       newStr += str.charAt(i);
     }
   }
-  console.log(newStr);
+  // console.log(newStr);
   return newStr;
 };
 
@@ -133,6 +133,10 @@ Write a function named findAnything that takes in an array of strings, along wit
 
 const findAnything = (arr, target) => {
   // Solution code here...
+
+  const hasTarget = arr.filter((string) => string.includes(target));
+  //console.log(hasTarget);
+  return hasTarget;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -143,6 +147,11 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  const hasTarget = arr.filter((string) => string.includes(target));
+  if (hasTarget.length != arr.length) {
+    return false;
+  }
+  return true;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,6 +168,13 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
   // Solution code here...
+  var filteredArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    var filteredCourse = arr[i].filter((name) => !name.includes("Brook"));
+    filteredArray.push(filteredCourse);
+  }
+  console.log(filteredArray);
+  return filteredArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -315,7 +331,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should find all the strings that contain a given string", () => {
     const words = [
       "things",
@@ -333,7 +349,7 @@ xdescribe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should determine whether all the strings contain a given string", () => {
     const words = [
       "things",
@@ -349,7 +365,7 @@ xdescribe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should remove Brook from all courses", () => {
     const roster = [
       ["Michelle", "Allie", "Brook TESTING"],

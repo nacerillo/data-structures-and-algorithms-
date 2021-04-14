@@ -210,6 +210,11 @@ The top row of the board is considered row zero and row numbers increase as they
 
 const battleship = (board, row, col) => {
   //  Solution code here...
+  console.log("Board", board[row][col]);
+  if (board[row][col] === "#") {
+    return "hit";
+  }
+  return "miss";
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -242,6 +247,16 @@ const weeklyTemperatures = [
 
 const averageDailyTemperature = (weather) => {
   // Solution code here...
+  var total;
+  var average;
+  var length = weather.length + weather[0].length;
+  for (var x = 0; x < weather.length; x++) {
+    for (var y = 0; y < weather[x].length; y++) {
+      total += weather[x][y];
+    }
+  }
+  console.log(total / length);
+  return total / length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -374,7 +389,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   const battleshipData = [
     ["#", " ", "#", " "],
     ["#", " ", "#", " "],
@@ -393,7 +408,7 @@ xdescribe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should multiply all the numbers together", () => {
     expect(
       calculateProduct([
@@ -418,7 +433,7 @@ xdescribe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should calculate and return the average temperature of the data set", () => {
     expect(averageDailyTemperature(weeklyTemperatures)).toStrictEqual(60.25);
   });

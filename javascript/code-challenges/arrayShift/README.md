@@ -14,3 +14,5 @@
 - when the index = middle, add the desired element.
 
 ## Solution:
+
+[My Code](https://github.com/nacerillo/data-structures-and-algorithms-/blob/array-shift/javascript/code-challenges/arrayShift/array-shift.js)

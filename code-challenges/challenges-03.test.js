@@ -268,6 +268,7 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  arr.forEach
 };
 
 /* ------------------------------------------------------------------------------------------------

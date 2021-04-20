@@ -173,7 +173,7 @@ const unenrollBrook = (arr) => {
     var filteredCourse = arr[i].filter((name) => !name.includes("Brook"));
     filteredArray.push(filteredCourse);
   }
-  console.log(filteredArray);
+  //console.log(filteredArray);
   return filteredArray;
 };
 

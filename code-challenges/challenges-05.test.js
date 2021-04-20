@@ -307,6 +307,8 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 
 const extractVowels = (str) => {
   // Solution code here...
+  var newStr = str.replace(/[aeiou]/gi, "");
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------

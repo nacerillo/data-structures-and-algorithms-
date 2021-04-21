@@ -4,4 +4,4 @@
 
 1. [arrayShift](https://github.com/nacerillo/data-structures-and-algorithms-/tree/array-shift/javascript/code-challenges/arrayShift)
 
-2.[binaryTree]
+2. [binaryTree](https://github.com/nacerillo/data-structures-and-algorithms-/tree/array-binary-search/javascript/code-challenges/arrayShift)

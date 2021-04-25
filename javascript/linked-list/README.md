@@ -64,7 +64,5 @@ while (current_node != NULL) {
 
 ## Solution:
 
-[My Code](https://github.com/nacerillo/data-structures-and-algorithms-/blob/array-shift/javascript/code-challenges/arrayShift/array-shift.js)
-
-[My WhiteBoard Images:1](https://share.icloud.com/photos/0qUvNVdYrrhUdHc9m28Q9o0AA)
-[My WhiteBoard Images:2](https://share.icloud.com/photos/07jI_Mje7p_Va-b_oMkAO_S7g)
+[My Code](https://github.com/nacerillo/data-structures-and-algorithms-)
+[My WhiteBoarding]()

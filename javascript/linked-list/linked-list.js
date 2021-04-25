@@ -13,11 +13,11 @@ class LinkedList {
     if (!this.head) {
       this.head = node;
     } else {
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
+      let current_node = this.head;
+      while (current_node.next) {
+        current_node = current_node.next;
       }
-      current.next = node;
+      current_node.next = node;
     }
   }
 

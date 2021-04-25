@@ -1,7 +1,15 @@
-'use strict';
+"use strict";
 
-class LinkedList {
+const LinkedList = require("./linked-list.js");
 
-}
+let ll = new LinkedList();
 
-module.exports = LinkedList;
+console.log("empty list", ll);
+
+ll.append(10);
+
+console.log("single item", ll);
+
+ll.append(20);
+
+console.log("2 items", ll);

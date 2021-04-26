@@ -64,5 +64,6 @@ while (current_node != NULL) {
 
 ## Solution:
 
-[My Code](https://github.com/nacerillo/data-structures-and-algorithms-)
-[My WhiteBoarding]()
+- [My Code](https://github.com/nacerillo/data-structures-and-algorithms-)
+- My WhiteBoarding = see assets folder
+- [Pulls](https://github.com/nacerillo/data-structures-and-algorithms-/pull/18)

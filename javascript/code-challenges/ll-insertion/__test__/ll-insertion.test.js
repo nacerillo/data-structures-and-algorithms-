@@ -14,8 +14,8 @@ describe("Linked List", () => {
     list.append(5);
     list.append(6);
     list.append(7);
-    list.insertBefore(6, 99);
-    expect(list.toString()).toEqual("{5}->{99}->{6}->{7}->NULL");
+    list.insertBefore(7, 99);
+    expect(list.toString()).toEqual("{5}->{6}->{99}->{7}->NULL");
   });
 
   it("should insert node-x AFTER node-y when using insertAfter()", () => {
@@ -24,7 +24,7 @@ describe("Linked List", () => {
     list.append(5);
     list.append(6);
     list.append(7);
-    list.insertAfter(6, 99);
-    expect(list.toString()).toEqual("{5}->{6}->{99}->{7}->NULL");
+    list.insertAfter(7, 99);
+    expect(list.toString()).toEqual("{5}->{6}->{7}->{99}->NULL");
   });
 });

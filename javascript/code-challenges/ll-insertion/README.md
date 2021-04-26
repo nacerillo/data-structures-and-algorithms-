@@ -59,6 +59,6 @@ if(/*I've reached the condition that i want to insert my Node at*/){
 
 ## Solution:
 
-- [Pulls]()
-- [My Code]()
+- [Pulls](https://github.com/nacerillo/data-structures-and-algorithms-/pull/19/commits)
+- [My Code](https://github.com/nacerillo/data-structures-and-algorithms-/tree/main/javascript/code-challenges/ll-insertion)
 - [My WhiteBoarding]()

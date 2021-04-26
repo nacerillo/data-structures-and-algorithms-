@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -10,14 +10,14 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 const raisedToTheThird = (arr) => {
   const result = [];
-  arr.forEach(number => {
-    var cubed = Math.pow(number,3);
+  arr.forEach((number) => {
+    var cubed = Math.pow(number, 3);
     result.push(cubed);
-  })
+  });
 
   return result;
   // Solution code here...
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -27,7 +27,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  var result = str + ' The end.';
+  var result = str + " The end.";
   return result;
   // Solution code here...
 };
@@ -87,9 +87,9 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
-  people.forEach(p => {
+  people.forEach((p) => {
     p.isAuthor = true;
-  })
+  });
   return people;
 };
 
@@ -110,7 +110,7 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   // Solution code here...
-
+  arr1.push(...arr2);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,43 +124,53 @@ Run your tests from the console: jest challenges-02.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
-  test('It should return a new array of numbers raised to the thrid power', () => {
-    expect(raisedToTheThird([2, 4, 5, -7, 0])).toStrictEqual([8, 64, 125, -343, 0]);
+describe("Testing challenge 1", () => {
+  test("It should return a new array of numbers raised to the thrid power", () => {
+    expect(raisedToTheThird([2, 4, 5, -7, 0])).toStrictEqual([
+      8,
+      64,
+      125,
+      -343,
+      0,
+    ]);
   });
 });
 
-describe('Testing challenge 2', () => {
-  test('It should append without modifying the oiginal', () => {
-    const a = 'This is my story.';
+describe("Testing challenge 2", () => {
+  test("It should append without modifying the oiginal", () => {
+    const a = "This is my story.";
     const b = appendTheEnd(a);
 
-    expect(a).toStrictEqual('This is my story.');
-    expect(b).toStrictEqual('This is my story. The end.');
+    expect(a).toStrictEqual("This is my story.");
+    expect(b).toStrictEqual("This is my story. The end.");
   });
 });
 
-describe('Testing challenge 3', () => {
-  test('It should append by modifying the oiginal', () => {
-    const a = ['Yes', 'it', 'is'];
+describe("Testing challenge 3", () => {
+  test("It should append by modifying the oiginal", () => {
+    const a = ["Yes", "it", "is"];
     appendFirstToLast(a);
 
-    expect(a).toStrictEqual(['Yes', 'it', 'is', 'Yes']);
+    expect(a).toStrictEqual(["Yes", "it", "is", "Yes"]);
   });
 });
 
-describe('Testing challenge 4', () => {
-  test('It should add a property to an object', () => {
-    const a = { fullName: 'Octavia Butler' };
+describe("Testing challenge 4", () => {
+  test("It should add a property to an object", () => {
+    const a = { fullName: "Octavia Butler" };
     addBirthYearProperty(a, 1947);
 
     expect(a.yearBorn).toStrictEqual(1947);
   });
 });
 
-describe('Testing challenge 5', () => {
-  test('It should add a property to every object in an array', () => {
-    const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
+describe("Testing challenge 5", () => {
+  test("It should add a property to every object in an array", () => {
+    const a = [
+      { fullName: "Octavia Butler" },
+      { fullName: "Ray Bradbury" },
+      { fullName: "Kurt Vonnegut" },
+    ];
     setStatusAsAuthor(a);
 
     expect(a[0].isAuthor).toStrictEqual(true);
@@ -169,8 +179,8 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
-  test('It should append the second array to the first', () => {
+describe("Testing challenge 6", () => {
+  test("It should append the second array to the first", () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
     append(a, b);

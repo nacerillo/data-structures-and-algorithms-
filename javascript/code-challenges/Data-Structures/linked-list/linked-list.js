@@ -41,7 +41,34 @@ class LinkedList {
     }
     return false;
   }
+  kthFromEnd(k) {
+    let length = 0;
+    let current_node;
+    if (k < 0) {
+      return "Cannot Use Negative";
+    }
+    if (!this.head) {
+      return "list does not exist";
+    } else {
+      current_node = this.head;
+    }
 
+    while (current_node) {
+      current_node = current_node.next;
+      length++;
+    }
+    if (length < k) {
+      return "Exception";
+    }
+    if (length >= k) {
+      current_node = this.head;
+      for (var x = 0; x < length - k - 1; x++) {
+        current_node = current_node.next;
+      }
+    }
+
+    return current_node.value;
+  }
   toString() {
     let current_node;
     let listString = "";

@@ -46,6 +46,6 @@ class LinkedList {
 
 ## Solution:
 
-- [WhiteBoarding]()
+- [WhiteBoarding](https://github.com/nacerillo/data-structures-and-algorithms-/blob/ll-kth-from-end/javascript/code-challenges/Data-Structures/linked-list/assets/Challenge6WB.jpeg)
 - [CODE-Actions](https://github.com/nacerillo/data-structures-and-algorithms-/actions)
-- [CODE]()
+- [CODE](https://github.com/nacerillo/data-structures-and-algorithms-/tree/ll-kth-from-end)

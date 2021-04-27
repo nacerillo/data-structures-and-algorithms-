@@ -1,6 +1,6 @@
 "use strict";
 
-const LinkedList = require("./ll-insertion.js");
+const LinkedList = require("../ll-insertion.js");
 
 let ll = new LinkedList();
 

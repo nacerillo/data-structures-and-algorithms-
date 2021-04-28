@@ -59,6 +59,7 @@ while (current_node != NULL) {
 }
 ```
 
+
 - TIME COMPLEXITY: `O(n)` as iteration only needs to happen once to go through the list.
 - total time depends on number of elements, `n`, in the list.
 

@@ -52,4 +52,31 @@ describe("Linked List", () => {
     list.append(7);
     expect(list.toString()).toEqual("{5}->{6}->{7}->NULL");
   });
+
+  it("return element that is Kth From the End", () => {
+    let list = new LinkedList();
+    list.append(1);
+    list.append(3);
+    list.append(8);
+    list.append(2);
+    expect(list.kthFromEnd(4)).toEqual(1);
+    expect(list.kthFromEnd(0)).toEqual(2);
+    expect(list.kthFromEnd(2)).toEqual(3);
+  });
+
+  it("Returns expection if K is greater than length of linked list", () => {
+    let list = new LinkedList();
+    list.append(1);
+    list.append(3);
+    list.append(8);
+    list.append(2);
+    expect(list.kthFromEnd(6)).toEqual("Exception");
+  });
+  it("Returns Cannot Use Negatives if k is less than zero", () => {
+    let list = new LinkedList();
+    list.append(1);
+    list.append(3);
+
+    expect(list.kthFromEnd(-1)).toEqual("Cannot Use Negative");
+  });
 });

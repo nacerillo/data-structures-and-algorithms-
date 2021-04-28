@@ -21,27 +21,6 @@ class LinkedList {
     }
   }
 
-  includes(val) {
-    let current_node;
-
-    //check if list is already empty or not
-    if (!this.head) {
-      return false;
-    } else {
-      current_node = this.head;
-      //iterate through list, if value matches that of the current node
-      //then return true, otherwise, iterate to next.
-      while (current_node.next) {
-        if (current_node.value == val) {
-          return true;
-        } else {
-          current_node = current_node.next;
-        }
-      }
-    }
-    return false;
-  }
-
   toString() {
     let current_node;
     let listString = "";
@@ -57,6 +36,27 @@ class LinkedList {
     }
     console.log(listString);
     return listString;
+  }
+
+  zipper(ziplist) {
+    let current1 = this.head;
+    let current2 = ziplist.head;
+    let temp1 = current1.next;
+    let temp2 = current2.next;
+    while (current2.next || current1.next) {
+      temp1 = current1.next;
+      temp2 = current2.next;
+      current1.next = current2;
+      current2.next = temp1;
+      current1 = temp1;
+      current2 = temp2;
+    }
+
+    if (temp2) {
+      current1.next = temp2;
+    }
+    //console.log(temp1);
+    //console.log(temp2);
   }
 }
 

@@ -48,7 +48,7 @@ describe("Queues", () => {
     que.enqueue("first");
     que.enqueue("second");
     que.enqueue("third");
-    console.log(que);
+    // console.log("ADDED Ques", que);
   });
   it("can dequeue item from the queue", () => {
     let que = new Queue();
@@ -56,6 +56,14 @@ describe("Queues", () => {
     que.enqueue("second");
     que.enqueue("third");
     que.dequeue();
-    console.log(que);
+    que.dequeue();
+    //  console.log("DEQUEUE", que);
+  });
+  it("can peek into que", () => {
+    let que = new Queue();
+    que.enqueue("first");
+    que.enqueue("second");
+    que.enqueue("third");
+    expect(que.peek()).toEqual("something");
   });
 });

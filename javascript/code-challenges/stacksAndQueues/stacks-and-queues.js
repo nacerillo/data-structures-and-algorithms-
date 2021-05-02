@@ -50,7 +50,10 @@ class Queue {
     return this;
   }
 
-  dequeue() {}
+  dequeue() {
+    console.log(this[--this.length]);
+    return 0;
+  }
 }
 
 module.exports = Stack;

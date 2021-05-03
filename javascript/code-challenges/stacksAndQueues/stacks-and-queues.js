@@ -38,23 +38,5 @@ class Stack {
   }
 }
 
-class Queue {
-  constructor() {
-    this.length = 0;
-    this.next = null;
-  }
-
-  enqueue(value) {
-    this[this.length] = value;
-    this.length++;
-    return this;
-  }
-
-  dequeue() {
-    console.log(this[--this.length]);
-    return 0;
-  }
-}
-
 module.exports = Stack;
 //module.exports = Queue;

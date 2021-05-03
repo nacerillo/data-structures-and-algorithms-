@@ -25,3 +25,4 @@ class Queue {
 
 - needed assistance with creating the dequeue logic, followed this example here
 - [SOURCE USED](https://medium.com/@mayashavin/ds-queue-implementation-in-js-21ea5914c428)
+  nodemeon on index.js

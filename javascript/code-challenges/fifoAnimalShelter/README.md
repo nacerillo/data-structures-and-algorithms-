@@ -44,7 +44,6 @@ class Queue {
     this.length--;
     if (this.front === this.length) {
       this.front = 0;
-      this.length = 0;
     }
     return node;
   }
@@ -54,6 +53,8 @@ class Queue {
   }
 }
 ```
+
+- when calling for enqueue and dequeue on AnimalShelter, I call either `enqueuItem` of `dequeueItem` on which over queue matches with the value `pref`
 
 [My Code]
 

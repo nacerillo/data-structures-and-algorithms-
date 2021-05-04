@@ -15,6 +15,7 @@ class Queue {
     this.length++;
   }
   dequeueItem() {
+    console.log("reached dequeueItem", this[this.front]);
     let current_length = this.length - this.front;
     if (current_length <= 0) {
       return null;
@@ -25,7 +26,7 @@ class Queue {
     this.length--;
     if (this.front === this.length) {
       this.front = 0;
-      this.length = 0;
+      //this.length = 0;
     }
     return node;
   }
@@ -53,13 +54,17 @@ class AnimalShelter {
         this.length++;*/
   }
   dequeue(pref) {
+    let adopted = "null";
     if (pref === "dog") {
-      this.dogs.dequeueItem();
+      console.log("reached dog");
+      adopted = this.dogs.dequeueItem();
     } else if (pref === "cat") {
-      this.cats.dequeueItem();
+      console.log("reached cat");
+      adopted = this.cats.dequeueItem();
     } else {
       return "ERROR: No animals of this type are available";
     }
+    return adopted;
     /*  let current_length = this.length - this.front;
         if (current_length <= 0) {
           return null;

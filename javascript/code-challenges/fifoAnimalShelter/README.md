@@ -56,6 +56,4 @@ class Queue {
 
 - when calling for enqueue and dequeue on AnimalShelter, I call either `enqueuItem` of `dequeueItem` on which over queue matches with the value `pref`
 
-[My Code]
-
-[My WhiteBoard Images:1]
+[My Code] (https://github.com/nacerillo/data-structures-and-algorithms-/tree/main/javascript/code-challenges/fifoAnimalShelter)

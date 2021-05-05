@@ -17,6 +17,7 @@ describe("Stack", () => {
     stack.pushToStack("first");
     stack.pushToStack("second");
     stack.pushToStack("third");
+    console.log(stack.peekAtStack());
     expect(stack.peekAtStack()).toEqual("third");
     let popped = stack.popFromStack();
     expect(stack.peekAtStack()).toEqual("second");

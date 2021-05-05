@@ -19,4 +19,4 @@
 
 ## Solution:
 
-[My Code](https://github.com/nacerillo/data-structures-and-algorithms-/blob/array-)
+[My Code](https://github.com/nacerillo/data-structures-and-algorithms-/blob/multi-bracket-validation/javascript/code-challenges/multi-bracket-validation/multi-bracket-validation.js)

@@ -43,7 +43,7 @@ class LinkedList {
     let current2 = ziplist.head;
     let temp1 = current1.next;
     let temp2 = current2.next;
-    while (current2.next || current1.next) {
+    while (current2.next && current1.next) {
       temp1 = current1.next;
       temp2 = current2.next;
       current1.next = current2;
@@ -51,10 +51,9 @@ class LinkedList {
       current1 = temp1;
       current2 = temp2;
     }
+    ziplist.head = current2;
 
-    if (temp2) {
-      current1.next = temp2;
-    }
+  
     //console.log(temp1);
     //console.log(temp2);
   }

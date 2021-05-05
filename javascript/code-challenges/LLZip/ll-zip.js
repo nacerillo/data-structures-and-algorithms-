@@ -41,8 +41,8 @@ class LinkedList {
   zipper(ziplist) {
     let current1 = this.head;
     let current2 = ziplist.head;
-    let temp1 = current1.next;
-    let temp2 = current2.next;
+    let temp1;
+    let temp2;
     while (current2.next && current1.next) {
       temp1 = current1.next;
       temp2 = current2.next;

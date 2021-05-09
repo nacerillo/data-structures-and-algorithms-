@@ -11,14 +11,21 @@ E.g. [4,2,7,5,9,2] -> 9
 const maxInArray = (arr) => {
   // Solution code here...
   //let max = 0;
-  let finalmax = arr.reduce((x, max) => {
+  /*let finalmax = arr.reduce((x, max) => {
     if (x > max) {
       max = x;
     }
     return max;
   });
 
-  return finalmax;
+  return finalmax;*/
+  let finalemax = arr.reduce((x, max) => {
+    if (x > max) {
+      max = x;
+    }
+    return max;
+  });
+  return finalemax;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,21 +45,28 @@ return: 23
 const findMax = (matrix) => {
   // Solution code here...
 
-  const maxArr = matrix.map((arr) => {
-    return arr.reduce((x, max) => {
-      if (x >= max) {
-        max = x;
-      }
-      return max;
-    });
+  const maxFinal = matrix.map((arr) => {
+    return arr
+      .reduce((x, max) => {
+        if (x >= max) {
+          max = x;
+        }
+        return max;
+      })
+      .reduce((y, max) => {
+        if (y >= max) {
+          max = y;
+        }
+        return max;
+      });
   });
-
-  const max = maxArr.reduce((y, max) => {
+  return maxFinal;
+  /*const max = maxArr.reduce((y, max) => {
     if (y >= max) {
       max = y;
     }
     return max;
-  });
+  });*/
 
   return max;
 };

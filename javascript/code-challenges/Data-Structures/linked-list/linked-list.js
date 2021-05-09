@@ -4,20 +4,20 @@ const Node = require("./node.js");
 class LinkedList {
   constructor() {
     this.head = null;
+    // this.length = 0;
   }
 
   append(val) {
     let node = new Node(val);
-    //var current_node;
-    //if the linkedlist does not yet exist. make one!
-    if (!this.head) {
+    if (this.head === null) {
       this.head = node;
     } else {
-      let current_node = this.head;
-      while (current_node.next) {
-        current_node = current_node.next;
+      let current = this.head;
+      while (current.next) {
+        // this.length += 1;
+        current = current.next;
       }
-      current_node.next = node;
+      current.next = node;
     }
   }
 
@@ -42,29 +42,27 @@ class LinkedList {
     return false;
   }
   kthFromEnd(k) {
-    let length = 0;
+    //console.log("LENGTH/K:", this.length, k);
     let current_node;
-    if (k < 0) {
-      return "Cannot Use Negative";
+    let length = 0;
+    let temp = this.head;
+    while (temp.next) {
+      temp = temp.next;
+      length++;
+    }
+    if (k < 0 || k > length) {
+      return "Invalid K";
     }
     if (!this.head) {
       return "list does not exist";
-    } else {
-      current_node = this.head;
     }
 
-    while (current_node) {
+    current_node = this.head;
+    let difference = length - k + 1;
+    for (let x = 1; x < difference; x++) {
+      // console.log(current_node.next);
       current_node = current_node.next;
-      length++;
-    }
-    if (length < k) {
-      return "Exception";
-    }
-    if (length >= k) {
-      current_node = this.head;
-      for (var x = 0; x < length - k - 1; x++) {
-        current_node = current_node.next;
-      }
+      console.log(current_node.value);
     }
 
     return current_node.value;
@@ -86,5 +84,25 @@ class LinkedList {
     return listString;
   }
 }
+
+function minSteps(arr){
+let collector = 0;
+let multiplier = 1;
+
+for(let i = 1; i < arr.length; i++){
+  if(arr[i] != arr[i-1]){
+    if(arr[i] < arr[i-1]){
+      collector += (arr[i-1] - arr[i]) * multiplier;
+      multiplier = 1; 
+    }
+  }
+  else multiplier ++;
+}
+console.log("Total Steps: ", collector);
+
+}
+
+minSteps([5,5,5,2,2,2,1]);
+
 
 module.exports = LinkedList;

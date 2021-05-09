@@ -12,11 +12,11 @@ class Stack {
     this.length = 0;
   }
 
-  pushToStack(value) {
+  push(value) {
     this[this.length++] = value;
   }
 
-  popFromStack() {
+  pop() {
     if (this.length === 0) {
       return "oops! all empty!";
     }
@@ -26,7 +26,7 @@ class Stack {
     return result;
   }
 
-  peekAtStack() {
+  peek() {
     return this[this.length - 1];
   }
 

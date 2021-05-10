@@ -7,7 +7,7 @@
 }*/
 const Node = require("./node.js");
 
-/*class BinaryTree {
+class BinaryTree {
   constructor(root = null) {
     this.root = root;
   }
@@ -44,7 +44,7 @@ const Node = require("./node.js");
     _walk(this.root);
     return results;
   }
-}*/
+}
 
 class BinarySearchTree {
   constructor(root = null) {

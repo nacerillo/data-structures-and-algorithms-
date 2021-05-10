@@ -7,45 +7,6 @@
 }*/
 const Node = require("./node.js");
 
-class BinaryTree {
-  constructor(root = null) {
-    this.root = root;
-  }
-
-  preOrder() {
-    let results = [];
-    let _walk = (node) => {
-      results.push(node.data);
-      if (node.left) _walk(node.left);
-      if (node.right) _walk(node.right);
-    };
-    _walk(this.root);
-    return results;
-  }
-
-  inOrder() {
-    let results = [];
-    let _walk = (node) => {
-      if (node.left) _walk(node.left);
-      results.push(node.data);
-      if (node.right) _walk(node.right);
-    };
-    _walk(this.root);
-    return results;
-  }
-
-  postOrder() {
-    let results = [];
-    let _walk = (node) => {
-      if (node.left) _walk(node.left);
-      if (node.right) _walk(node.right);
-      results.push(node.data);
-    };
-    _walk(this.root);
-    return results;
-  }
-}
-
 class BinarySearchTree {
   constructor(root = null) {
     this.root = root;

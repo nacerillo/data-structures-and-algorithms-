@@ -42,7 +42,7 @@ class BinaryTree {
   // the current Node's data, the Left Neigbhor's data, and the Right Neighbor's data.
   findMaximum(root) {
     if (root === null) {
-      return -1;
+      return -999;
     }
     let maximum = root.data;
     let lefty = findMaximum(root.left);

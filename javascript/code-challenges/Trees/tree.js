@@ -1,12 +1,13 @@
-class Node {
+/*class Node {
   constructor(data) {
     this.data = data;
     this.left = null;
     this.right = null;
   }
-}
+}*/
+const Node = require("./node.js");
 
-class BinaryTree {
+/*class BinaryTree {
   constructor(root = null) {
     this.root = root;
   }
@@ -43,7 +44,7 @@ class BinaryTree {
     _walk(this.root);
     return results;
   }
-}
+}*/
 
 class BinarySearchTree {
   constructor(root = null) {
@@ -56,27 +57,6 @@ class BinarySearchTree {
       this.root = node;
     } else {
       this.addHelper(this.root, node);
-    }
-  }
-
-  contains(root_node, value) {
-    //if root is empry, return false
-    if (!root_node) {
-      return false;
-    } else {
-      //if the root contains the value, return true
-      if (root_node.data === value) {
-        return true;
-      }
-      //if the value is greater than the root data,
-      //than it must be somewhere in the right branch
-      //(Assuming it does exist)
-      //Otherwsie, it must be in the left branch
-      else if (root_node.data < value) {
-        return this.contains(root_node.right, value);
-      } else {
-        return this.contains(root_node.left, value);
-      }
     }
   }
 
@@ -102,6 +82,59 @@ class BinarySearchTree {
         this.addHelper(root_node.right, new_node);
       }
     }
+  }
+  contains(root_node, value) {
+    //if root is empry, return false
+    if (!root_node) {
+      return false;
+    } else {
+      //if the root contains the value, return true
+      if (root_node.data === value) {
+        return true;
+      }
+      //if the value is greater than the root data,
+      //than it must be somewhere in the right branch
+      //(Assuming it does exist)
+      //Otherwsie, it must be in the left branch
+      else if (root_node.data < value) {
+        return this.contains(root_node.right, value);
+      } else {
+        return this.contains(root_node.left, value);
+      }
+    }
+  }
+
+  preOrder() {
+    let results = [];
+    let _walk = (node) => {
+      results.push(node.data);
+      if (node.left) _walk(node.left);
+      if (node.right) _walk(node.right);
+    };
+    _walk(this.root);
+    return results;
+  }
+
+  inOrder() {
+    let results = [];
+    let _walk = (node) => {
+      if (node.left) _walk(node.left);
+      results.push(node.data);
+      if (node.right) _walk(node.right);
+    };
+    _walk(this.root);
+    return results;
+  }
+
+  postOrder() {
+    let results = [];
+    let _walk = (node) => {
+      if (node.left) _walk(node.left);
+      if (node.right) _walk(node.right);
+      results.push(node.data);
+    };
+    _walk(this.root);
+    return results;
   }
 }
 

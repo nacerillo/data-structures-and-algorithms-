@@ -1,4 +1,4 @@
-const BT = require("../binarytree");
+const BST = require("../binarytree");
 
 describe("BST TESTS", () => {
   it("can successfully instantiate an empty tree", () => {

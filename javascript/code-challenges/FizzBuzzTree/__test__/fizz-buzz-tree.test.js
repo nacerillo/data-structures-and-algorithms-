@@ -11,7 +11,10 @@ describe("Fizz Buzz Tests", () => {
     tree.add(21);
     tree.add(32);
     tree.add(2);
+    //let expected = [10, 5, 4, 2, 7, 20, 21, 32];
     let expected = ["Buzz", "Buzz", 4, 2, 7, "Buzz", 21, "FizzBuzz"];
+    //console.log(FB(tree));
+    console.log("TREE", tree);
     expect(FB(tree)).toEqual(expected);
   });
 

@@ -10,9 +10,10 @@ function FizzBuzzCheck(val) {
 }
 
 module.exports = function returnFizzBuzz(FBT) {
-  let results = [];
-
   //console.log("leftNode", FBT.root.left);
+  if (!FBT.root) {
+    return null;
+  }
   let _walk = (node) => {
     if (node.left) {
       node.left.data = FizzBuzzCheck(node.left.data);
@@ -22,21 +23,25 @@ module.exports = function returnFizzBuzz(FBT) {
       node.right.data = FizzBuzzCheck(node.right.data);
       _walk(node.right);
     }
-    results.push(node.data);
+    node.data = FizzBuzzCheck(node.data);
   };
   _walk(FBT.root);
-  return results;
+  return FBT;
 };
 
 /*
-  findMaximum(root) {
-      let results = [];
+  fizzbuzzSetter(root) {
     if (root === null) {
-      return -999;
+      return null;
     }
-    let finalTree = root;
-    let lefty = findMaximum(root.left);
-    let righty = findMaximum(root.right);
-    if()
-    return maximum;
+    
+    let lefty = fizzbuzzSetter(root.left);
+    let righty = fizzbuzzSetter(root.right);
+    if(lefty){
+      root.data = FizzBuzzCheck(lefty.left.data);
+    }
+    if(righty){
+      root.data = FizzBuzzCheck(lefty.left.data);
+    }
+    return root;
   }*/

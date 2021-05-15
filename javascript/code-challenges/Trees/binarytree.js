@@ -1,3 +1,10 @@
+/*class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}*/
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
@@ -25,6 +32,27 @@ class BinaryTree {
     return results;
   }
 
+  breadthFirstSearch() {
+    let results = [];
+    let queue = [this.root];
+    if (this.root === null) {
+      return null;
+    }
+    // console.log("QL", queue.length);
+    while (queue.length > 0) {
+      for (let i = 0; i < queue.length; i++) {
+        let node = queue.shift();
+        results.push(node.data);
+        if (node.left) {
+          queue.push(node.left);
+        }
+        if (node.right) {
+          queue.push(node.right);
+        }
+      }
+    }
+    return results;
+  }
   postOrder() {
     let results = [];
     let _walk = (node) => {
@@ -57,3 +85,5 @@ class BinaryTree {
     return maximum;
   }
 }
+
+module.exports = BinaryTree;

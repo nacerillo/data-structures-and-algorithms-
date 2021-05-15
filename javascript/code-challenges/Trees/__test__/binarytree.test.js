@@ -1,5 +1,5 @@
-const BST = require("../binarytree");
-
+const BST = require("../tree");
+const BT = require("../binarytree");
 describe("BST TESTS", () => {
   it("can successfully instantiate an empty tree", () => {
     let tree = new BST();
@@ -61,5 +61,21 @@ describe("BST TESTS", () => {
     tree.add(2);
     let expected = [2, 4, 7, 5, 32, 21, 20, 10];
     expect(tree.postOrder()).toEqual(expected);
+  });
+});
+
+describe("BT TESTS", () => {
+  it("Will return an array that displays the nodes in the order that they were added.", () => {
+    let tree = new BST();
+    tree.add(10);
+    tree.add(5);
+    tree.add(20);
+    tree.add(4);
+    tree.add(7);
+    tree.add(21);
+    //console.log(tree.inOrder());
+    let binarytree = new BT(tree.root);
+    //console.log(binarytree.breadthFirstSearch());
+    expect(binarytree.breadthFirstSearch()).toEqual(null);
   });
 });

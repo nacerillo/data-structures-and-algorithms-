@@ -16,13 +16,11 @@
   2. dequeue node and push its data value into array
   3. if the node had children, enqueue them in starting from left to right.
   4. return to the front of the queue, repeat step 1-3.
-
+- ![alt text](https://github.com/nacerillo/data-structures-and-algorithms-/blob/breadth-first/javascript/code-challenges/Trees/__test__/assets/Screen%20Shot%202021-05-15%20at%2012.54.08%20PM.png) 
 ## Tests:
 
 - Will return an array that displays the nodes in the order that they were added.
-- ![alt text](https://github.com/nacerillo/data-structures-and-algorithms-/blob/breadth-first/javascript/code-challenges/Trees/__test__/assets/Screen%20Shot%202021-05-15%20at%2012.54.08%20PM.png) 
+
 
 ## SOURCE:
-
-- [cd/ci] ()
-- [code] ()
+- [code] (https://github.com/nacerillo/data-structures-and-algorithms-/blob/breadth-first/javascript/code-challenges/Trees/binarytree.js) 

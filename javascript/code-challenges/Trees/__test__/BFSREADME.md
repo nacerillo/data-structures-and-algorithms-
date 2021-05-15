@@ -20,7 +20,7 @@
 ## Tests:
 
 - Will return an array that displays the nodes in the order that they were added.
-- ![alt text]()
+- ![alt text](https://github.com/nacerillo/data-structures-and-algorithms-/blob/breadth-first/javascript/code-challenges/Trees/__test__/assets/Screen%20Shot%202021-05-15%20at%2012.54.08%20PM.png) 
 
 ## SOURCE:
 

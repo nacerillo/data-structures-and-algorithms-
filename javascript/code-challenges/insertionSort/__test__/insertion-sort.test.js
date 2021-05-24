@@ -1,4 +1,4 @@
-let insertSort = require("../insertion-sort.js");
+let insertSort = require("..insertion-sort");
 
 describe("Insertion Sort: ", () => {
   test("should be able to sort a unsorted array", () => {

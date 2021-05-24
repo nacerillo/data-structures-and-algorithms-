@@ -35,4 +35,20 @@ class Queue {
   }
 }
 
+/*class Queue {
+  constructor() {
+    this.queueArr = [];
+  }
+
+  enqueue(item) {
+    this.queueArr.push(item);
+  }
+  dequeue() {
+    return this.queueArr.shift();
+  }
+  peek() {
+    return this.queueArr[0];
+  }
+}*/
+
 module.exports = Queue;

@@ -38,7 +38,7 @@ return: 23
 const findMax = (matrix) => {
   // Solution code here...
 
-  const maxArr = matrix.map((arr) => {
+  /*const maxArr = matrix.map((arr) => {
     return arr.reduce((x, max) => {
       if (x >= max) {
         max = x;
@@ -54,7 +54,24 @@ const findMax = (matrix) => {
     return max;
   });
 
-  return max;
+  return max;*/
+
+  const maxArr = matrix.map((arr) => {
+    arr.reduce((max, i) => {
+      if (i >= max) {
+        max = i;
+      }
+      return max;
+    });
+  });
+
+  const finalMax = maxArr.reduce((mf, j) => {
+    if (j >= mf) {
+      mf = j;
+    }
+    return mf;
+  });
+  return finalMax;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,6 +98,7 @@ const totalSum = (matrix) => {
   const sum = sumArr.reduce((a, b) => a + b, 0);
   return sum;
 };
+console.log(totalSum([1, 2, 3]));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4

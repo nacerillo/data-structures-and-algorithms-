@@ -1,19 +1,21 @@
-let merge = (l, r, array) => {
-  let i = 0;
-  let j = 0;
-  let k = 0;
-  while (i < l.length && j < r.length) {
-    if (l[i] < r[j]) {
-      array[k] = l[i];
-      i += 1;
+let merge = (l, r) => {
+  const result = [];
+
+  while (l.length && r.length) {
+    if (a[0] > b[0]) {
+      result.push(b.shift());
     } else {
-      array[k] = r[j];
-      j += 1;
+      result.push(a.shift());
     }
-    k += 1;
   }
-  if (i === l.length) {
+  while (l.length) {
+    result.push(l.shift());
   }
+  while (r.length) {
+    result.push(r.shift());
+  }
+
+  return result;
 };
 
 module.exports = mergeSort = (arr) => {
@@ -21,11 +23,11 @@ module.exports = mergeSort = (arr) => {
   if (n > 1) {
     let mid = Math.ceil(n / 2);
     let left = arr.splice(0, mid);
-    let right = arr.splice(-mid);
+    let right = arr.splice(mid, n);
 
-    mergeSort(left);
-    mergeSort(right);
-    return merge(left, right, arr);
+    let sortedL = mergeSort(left);
+    let sortedR = mergeSort(right);
+    return merge(sortedL, sortedR);
   }
   return arr;
 };

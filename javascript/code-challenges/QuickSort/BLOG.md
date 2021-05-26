@@ -2,10 +2,8 @@
 
 Quick sort functions similarly to Merge sort in that it follows a 'divide and conquor' approach to sorting an array.
 
-- we start by picking an element in the array. we then check each element that lies to the left and to the right of this pivot element.
-- if the element is greater than the pivot point, we swap to the right of the pivot point.
-- if the element is less than the pivot point, we swap that element to sit on the left side.
-- we then apply this same process to the elements on either side of the original pivot point.
+- select an element to serve as a "pivot" on the array. In this case, we will start with the right-most end of the array.
+-
 
 ## PsuedoCode:
 

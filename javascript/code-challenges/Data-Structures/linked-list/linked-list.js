@@ -60,11 +60,12 @@ class LinkedList {
     if (length < k) {
       return "Exception";
     }
-    if (length >= k) {
-      current_node = this.head;
-      for (var x = 0; x < length - k - 1; x++) {
-        current_node = current_node.next;
-      }
+
+    current_node = this.head;
+    let i = 1;
+    while (i < length - k) {
+      current_node = current_node.next;
+      i++;
     }
 
     return current_node.value;

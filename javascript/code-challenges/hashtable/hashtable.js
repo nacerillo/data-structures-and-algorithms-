@@ -20,6 +20,19 @@ class LinkedList {
       this.head = newNode;
     }
   }
+
+  getList() {
+    if (!this.head) return "List does not exist";
+
+    let current_node = this.head;
+
+    let list = [];
+    while (current_node) {
+      list.push(current_node.data);
+      current_node = current_node.next;
+    }
+    return list;
+  }
 }
 
 class HashMap {
@@ -52,12 +65,24 @@ class HashMap {
 
   getValueofKey(key) {
     let hash = this.hash(key);
-    if (this.mapContains(key)) {
-      while (this.storage[hash].head) {
-        if (this.storage[hash].head.data[0] === key) {
-          return this.storage[hash].head.data[1];
-        }
-        this.storage[hash].head = this.storage[hash].head.next;
+    let list = this.storage[hash];
+    let current_node = list.head;
+
+    let results = list
+      .getList()
+      .filter((keyvaluePair) => keyvaluePair[0] === key);
+    if (results.length > 1) {
+      return results.map((keyvaluePair) => keyvaluePair[1]);
+    }
+
+    if (current_node.data[0] === key) {
+      return currnet_node.data[1];
+    }
+
+    while (current_node.next) {
+      current_node = current_node.next;
+      if (current_node.data[0] === key || current_node.next.data[0]) {
+        return current_node.data[1];
       }
     }
     return "does not contain key";
@@ -87,3 +112,4 @@ hashmap.addPair("elijah", "prom");
 
 //console.log(hashmap);
 console.log(hashmap.mapContains("brian"));
+console.log(hashmap.getValueofKey("chirs"));

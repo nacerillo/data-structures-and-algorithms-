@@ -53,7 +53,14 @@ class HashMap {
   getValueofKey(key) {
     let hash = this.hash(key);
     if (this.mapContains(key)) {
+      while (this.storage[hash].head) {
+        if (this.storage[hash].head.data[0] === key) {
+          return this.storage[hash].head.data[1];
+        }
+        this.storage[hash].head = this.storage[hash].head.next;
+      }
     }
+    return "does not contain key";
   }
 
   mapContains(key) {

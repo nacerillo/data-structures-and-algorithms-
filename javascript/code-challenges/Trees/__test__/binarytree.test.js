@@ -73,9 +73,9 @@ describe("BT TESTS", () => {
     tree.add(4);
     tree.add(7);
     tree.add(21);
-    //console.log(tree.inOrder());
+    console.log(tree.inOrder());
     let binarytree = new BT(tree.root);
-    //console.log(binarytree.breadthFirstSearch());
-    expect(binarytree.breadthFirstSearch()).toEqual(null);
+    console.log(binarytree.breadthFirstSearch());
+    expect(binarytree.breadthFirstSearch()).toEqual([10, 5, 20, 4, 7, 21]);
   });
 });

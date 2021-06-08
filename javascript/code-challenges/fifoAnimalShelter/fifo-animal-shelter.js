@@ -65,19 +65,6 @@ class AnimalShelter {
       return "ERROR: No animals of this type are available";
     }
     return adopted;
-    /*  let current_length = this.length - this.front;
-        if (current_length <= 0) {
-          return null;
-        }
-        let node = this[this.front];
-        delete this[this.front];
-        this.front++;
-        this.length--;
-        if (this.front === this.length) {
-          this.front = 0;
-          this.length = 0;
-        }
-        return node;*/
   }
 }
 

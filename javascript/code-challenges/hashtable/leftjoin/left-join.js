@@ -17,8 +17,10 @@ function leftJoin(hashmap1, hashmap2) {
       } else {
         innerlist.push(null);
       }
-      console.log("KEY ", current1.data[0]);
+      //console.log("KEY ", current1.data[0]);
       list.push(innerlist);
+      //console.log(current1.data);
+      //console.log(current1.data);
       current1 = current1.next;
     }
   }

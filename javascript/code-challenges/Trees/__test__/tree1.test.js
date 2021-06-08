@@ -33,6 +33,7 @@ describe("BST TESTS", () => {
     tree.add(2);
     let expected = [10, 5, 4, 2, 7, 20, 21, 32];
     expect(tree.preOrder()).toEqual(expected);
+    expect(tree.countNodesPreOrder()).toEqual(8);
   });
 
   it("can successfully return a collection from a inorder traversal", () => {
@@ -47,6 +48,7 @@ describe("BST TESTS", () => {
     tree.add(2);
     let expected = [2, 4, 5, 7, 10, 20, 21, 32];
     expect(tree.inOrder()).toEqual(expected);
+    expect(tree.countNodesInOrder()).toEqual(8);
   });
 
   it("can successfully return a collection from a postorder traversal", () => {
@@ -61,5 +63,6 @@ describe("BST TESTS", () => {
     tree.add(2);
     let expected = [2, 4, 7, 5, 32, 21, 20, 10];
     expect(tree.postOrder()).toEqual(expected);
+    expect(tree.countNodesPostOrder()).toEqual(8);
   });
 });

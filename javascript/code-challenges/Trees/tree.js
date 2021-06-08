@@ -20,8 +20,22 @@ class BinarySearchTree {
       this.addHelper(this.root, node);
     }
   }
-
-  addHelper(root_node, new_node) {
+  addHelper(root, newNode) {
+    if (newNode.data < root.data) {
+      if (!root.left) {
+        root.left = newNode;
+      } else {
+        this.addHelper(root.left, newNode);
+      }
+    } else {
+      if (!root.right) {
+        root.right = newNode;
+      } else {
+        this.addHelper(root.right, newNode);
+      }
+    }
+  }
+  /*addHelper(root_node, new_node) {
     ///if the new node data is less than the root, we want to add it to the left side
     if (new_node.data < root_node.data) {
       //if the left  is empty, than add our node to the left
@@ -43,7 +57,7 @@ class BinarySearchTree {
         this.addHelper(root_node.right, new_node);
       }
     }
-  }
+  }*/
   contains(root_node, value) {
     //if root is empry, return false
     if (!root_node) {
@@ -63,6 +77,51 @@ class BinarySearchTree {
         return this.contains(root_node.left, value);
       }
     }
+  }
+
+  countNodesPreOrder() {
+    let total = 0;
+    let walk = (node) => {
+      total += 1;
+      if (node.left) {
+        walk(node.left);
+      }
+      if (node.right) {
+        walk(node.right);
+      }
+    };
+    walk(this.root);
+    return total;
+  }
+
+  countNodesInOrder() {
+    let total = 0;
+    let walk = (node) => {
+      if (node.left) {
+        walk(node.left);
+      }
+      total += 1;
+      if (node.right) {
+        walk(node.right);
+      }
+    };
+    walk(this.root);
+    return total;
+  }
+
+  countNodesPostOrder() {
+    let total = 0;
+    let walk = (node) => {
+      if (node.left) {
+        walk(node.left);
+      }
+      if (node.right) {
+        walk(node.right);
+      }
+      total += 1;
+    };
+    walk(this.root);
+    return total;
   }
 
   preOrder() {

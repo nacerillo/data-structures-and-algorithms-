@@ -1,24 +1,31 @@
 class Stack {
   constructor() {
-    this.length = 0;
+    //this.length = 0;
+    this.elements = [];
+    this.maximum = Number.MIN_VALUE;
   }
 
   pushToStack(value) {
-    this[this.length++] = value;
+    // this[this.length++] = value;
+    this.elements.push(value);
+    if (value >= this.maximum) {
+      this.maximum = value;
+    }
+    //
   }
 
   popFromStack() {
     if (this.length === 0) {
       return "oops! all empty!";
     }
-    let result = this[--this.length];
+    let popped = this.elements.pop();
     // console.log(this[this.length]);
-    delete this[this.length];
-    return result;
+    //delete this[this.length];
+    return popped;
   }
 
   findMax() {
-    let max = -9999;
+    /*let max = -9999;
     let copy = this;
 
     while (copy.length > 0) {
@@ -27,15 +34,16 @@ class Stack {
         max = item.data;
       }
     }
-    return max;
+    return max;*/
+    return this.maximum;
   }
 
   peekAtStack() {
-    return this[this.length - 1];
+    return this.items[this.items.length - 1]; //this[this.length - 1];
   }
 
   isEmpty() {
-    if (this.length === 0) {
+    if (this.items.length === 0) {
       return true;
     }
     return false;

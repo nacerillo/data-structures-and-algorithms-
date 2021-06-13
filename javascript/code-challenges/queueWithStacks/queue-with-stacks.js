@@ -17,6 +17,19 @@ class Stack {
     return result;
   }
 
+  findMax() {
+    let max = -9999;
+    let copy = this;
+
+    while (copy.length > 0) {
+      let item = copy.popFromStack();
+      if (item.data >= max) {
+        max = item.data;
+      }
+    }
+    return max;
+  }
+
   peekAtStack() {
     return this[this.length - 1];
   }

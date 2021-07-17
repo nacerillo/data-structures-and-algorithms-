@@ -65,6 +65,6 @@ describe("Queues", () => {
     que.enqueue("first");
     que.enqueue("second");
     que.enqueue("third");
-    expect(que.peek()).toEqual("something");
+    expect(que.peek()).toEqual("first");
   });
 });

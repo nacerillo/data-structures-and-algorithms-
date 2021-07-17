@@ -1,10 +1,5 @@
-/*class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
-}*/
+const { root } = require("cheerio");
+
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
@@ -65,7 +60,7 @@ class BinaryTree {
   }
 
   // we need to go through every node in the tree, and each time
-  //we go to a node we'll need to check compare for a maximum
+  //we go to a node we'll need to check  for a maximum
   //against 3 things..
   // the current Node's data, the Left Neigbhor's data, and the Right Neighbor's data.
   findMaximum(root) {
@@ -73,14 +68,14 @@ class BinaryTree {
       return -999;
     }
     let maximum = root.data;
-    let lefty = findMaximum(root.left);
-    let righty = findMaximum(root.right);
+    let lefty = this.findMaximum(root.left);
+    let righty = this.findMaximum(root.right);
 
-    if (lefty.data > potentialMax) {
-      potentialMax = lefty.data;
+    if (lefty.data > maximum) {
+      maximum = lefty.data;
     }
-    if (righty.data > potentialMax) {
-      potentialMax = righty.data;
+    if (righty.data > maximum) {
+      maximum = righty.data;
     }
     return maximum;
   }

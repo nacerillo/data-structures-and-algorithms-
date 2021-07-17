@@ -60,22 +60,27 @@ class BinarySearchTree {
   }*/
   contains(root_node, value) {
     //if root is empry, return false
+    console.log(root_node.data);
     if (!root_node) {
       return false;
-    } else {
-      //if the root contains the value, return true
-      if (root_node.data === value) {
-        return true;
+    }
+    //if the root contains the value, return true
+    if (root_node.data === value) {
+      if (!root_node.next) {
+        console.log("is on a leaf!");
       }
-      //if the value is greater than the root data,
-      //than it must be somewhere in the right branch
-      //(Assuming it does exist)
-      //Otherwsie, it must be in the left branch
-      else if (root_node.data < value) {
-        return this.contains(root_node.right, value);
-      } else {
-        return this.contains(root_node.left, value);
-      }
+      console.log(root_node.data);
+      return true;
+    }
+    //if the value is greater than the root data,
+    //than it must be somewhere in the right branch
+    //(Assuming it does exist)
+    //Otherwsie, it must be in the left branch
+    if (root_node.data < value) {
+      return this.contains(root_node.right, value);
+    }
+    if (root_node.data > value) {
+      return this.contains(root_node.left, value);
     }
   }
 

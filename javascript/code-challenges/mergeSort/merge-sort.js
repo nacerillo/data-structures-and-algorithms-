@@ -18,7 +18,7 @@ let merge = (l, r) => {
   return result;
 };
 
-module.exports = mergeSort = (arr) => {
+let mergeSort = (arr) => {
   let n = arr.length;
   if (n > 1) {
     let mid = Math.ceil(n / 2);
@@ -31,3 +31,5 @@ module.exports = mergeSort = (arr) => {
   }
   return arr;
 };
+
+export default = mergeSort();

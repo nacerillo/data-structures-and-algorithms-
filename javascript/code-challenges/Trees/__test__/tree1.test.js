@@ -17,6 +17,7 @@ describe("BST TESTS", () => {
     tree.add(10);
     tree.add(5);
     tree.add(20);
+
     expect(tree.root.left.data).toEqual(5);
     expect(tree.root.right.data).toEqual(20);
   });
@@ -31,6 +32,7 @@ describe("BST TESTS", () => {
     tree.add(21);
     tree.add(32);
     tree.add(2);
+    expect(tree.contains(tree.root, 32)).toEqual(true);
     let expected = [10, 5, 4, 2, 7, 20, 21, 32];
     expect(tree.preOrder()).toEqual(expected);
     expect(tree.countNodesPreOrder()).toEqual(8);

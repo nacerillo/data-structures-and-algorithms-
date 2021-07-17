@@ -1,21 +1,18 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
-
 class Queue {
   constructor() {
-    this.front = 0;
+    // this.front = 0;
+    //  this.length = 0;
+    this.items = [];
     this.length = 0;
   }
   enqueue(value) {
-    this[this.length] = value;
+    /* this[this.length] = value;
+    this.length++;*/
+    this.items.push(value);
     this.length++;
   }
   dequeue() {
-    let current_length = this.length - this.front;
+    /* let current_length = this.length - this.front;
     if (current_length <= 0) {
       return null;
     }
@@ -27,11 +24,14 @@ class Queue {
       this.front = 0;
       this.length = 0;
     }
-    return node;
+    return node;*/
+    let dequeued = this.items.shift();
+    this.length--;
+    return dequeued;
   }
 
   peek() {
-    return this[this.length - 1];
+    return this.items[0];
   }
 }
 

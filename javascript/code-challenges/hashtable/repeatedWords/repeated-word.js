@@ -76,7 +76,7 @@ class HashMap {
     }
 
     if (current_node.data[0] === key) {
-      return currnet_node.data[1];
+      return current_node.data[1];
     }
 
     while (current_node.next) {

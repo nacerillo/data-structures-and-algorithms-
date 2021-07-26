@@ -22,14 +22,12 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  const newstr = [];
-  arr.forEach((animal) => {
+  //const newstr = [];
+  return arr.map((animal) => {
     //callback(animal);
-    console.log(callback(animal));
-    newstr.push(callback(animal));
-  });
-  // console.log(newstr);
-  return newstr.sort();
+    //console.log(callback(animal));
+    return callback(animal);
+  }); 
   // Solution code here...
 };
 
@@ -42,10 +40,10 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  arr.sort(function (x, y) {
+  arr.sort( (x, y) => {
     x = x.toLowerCase();
     y = y.toLowerCase();
-    if (x == y) {
+    if (x === y) {
       return 0;
     } else if (x < y) {
       return 1;
@@ -53,7 +51,6 @@ const sortNames = (arr) => {
       return -1;
     }
   });
-
   return arr;
 };
 
@@ -126,7 +123,6 @@ Here is an example of the input:
   {name: 'Tote bag', price: 15}
 ];
 ------------------------------------------------------------------------------------------------ */
-
 const sortByPrice = (arr) => {
   // Solution code here...
   console.log(arr);
@@ -151,7 +147,17 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  return arr.sort( (a, b) => {
+    if(a.toLowerCase() < b.toLowerCase()){
+      return -1;
+    }
+    else if (a.toLowerCase() > b.toLowerCase()){
+      return 1;
+    }
+    return 0;
+  });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal

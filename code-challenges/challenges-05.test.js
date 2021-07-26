@@ -27,7 +27,7 @@ let starWarsPeople = [
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...\
   //console.log(starWarsArr);
-  starWarsArr.sort(function (x, y) {
+  starWarsArr.sort( (x, y) => {
     //console.log(x.height, y.height);
     var x1 = parseInt(x.height);
     var y1 = parseInt(y.height);
@@ -35,12 +35,10 @@ const sortStarWarsCharacters = (starWarsArr) => {
       // console.log(x1.height, y1.height);
       // console.log("hello");
       return -1;
-    } else if (x1 < y1) {
+    } else{
       //  console.log("goodbye");
       return 1;
-    } else {
-      return 0;
-    }
+    } 
   });
   //console.log(starWarsArr);
   return starWarsArr;
@@ -88,13 +86,13 @@ const howMuchPencil = (str) => {
   let result = [];
   var pencil = str;
   // Solution code here...
-  for (var i = 0; i < str.length; i++) {
-    var sharp = pencil.slice(i, str.length);
-    result.push(sharp);
-    //console.log(sharp);
+  //pencil = pencil.slice(1);
+  while(pencil.length > 0){
+    result.push(pencil);
+    pencil = pencil.slice(1);
   }
   result.push("");
-  // console.log(result);
+  //console.log("SLICED ",result);
   return result;
 };
 
@@ -108,11 +106,11 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
-  let stringArr = [];
-
-  for (var i = 0; i < arr.length; i++) {
+  //let stringArr = [];
+  let stringArr = arr.split("");
+ /* for (var i = 0; i < arr.length; i++) {
     stringArr.push(arr.charAt(i));
-  }
+  }*/
   //console.log(stringArr);
   return stringArr;
 };
@@ -160,10 +158,14 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let results = [];
   //console.log(recipe.ingredients);
-  recipe.ingredients.forEach((item) => {
+  recipe.ingredients.forEach(item => {
     //console.log(item);
-    var spaces = 0;
-    for (var i = 0; i < item.length; i++) {
+    //var spaces = 0;
+    let x = item.split(" ").slice(2).join(' ');
+    //let sliced = arr;
+   // console.log(x);
+    results.push(x);
+    /*for (var i = 0; i < item.length; i++) {
       if (item[i] === " ") {
         spaces += 1;
       }
@@ -172,7 +174,8 @@ const listFoods = (recipe) => {
         results.push(item.slice(i + 1, item.length));
         break;
       }
-    }
+    }*/
+    
   });
   // Solution code here...
   // console.log(results);
@@ -188,8 +191,11 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  console.log(recipe);
+ // console.log(recipe);
   let result = [];
+  /*recipe.steps.forEach(step => {
+    return step.split(" ")[0];
+  });*/
   // Solution code here...
   return result;
 };
@@ -206,6 +212,11 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
+  // Solution code here...
+
+  recipe.steps.forEach(step => {
+    result.push(step.split(" ")[0]);
+  });
   // Solution code here...
   return result;
 };
@@ -225,13 +236,9 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
-  var odds = arr.filter((x) => {
-    if (x % 2 !== 0 || x === 0) {
-      return x;
-    }
-  });
-  console.log(odds);
-  return odds;
+ //console.log("FILTERED FOR ODDS", arr.filter(x => x%2));
+  return arr.filter(x => x%2);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -259,7 +266,7 @@ const removeLastCharacters = (str, numberOfCharacters) => {
   } else {
     newStr = str.substring(0, str.length - numberOfCharacters);
   }
-  console.log(newStr);
+  //console.log(newStr);
   return newStr;
 };
 
@@ -431,7 +438,7 @@ describe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should return a list of recipe steps", () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual([
       "Pre-heat",

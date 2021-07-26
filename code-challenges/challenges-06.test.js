@@ -62,12 +62,11 @@ const sortByChildren = (charArray) => {
     var yname = y.name;
     var xkids = x.children.length;
     var ykids = y.children.length;
-
-    if (xkids < ykids) {
-      console.log("yes");
-      return -1;
-    } else if (xkids > ykids) {
+    if (xkids > ykids) {
+      //console.log("yes");
       return 1;
+    } else if (xkids < ykids) {
+      return -1;
     } else if (xkids === ykids) {
       if (xname > yname) {
         return 1;
@@ -76,7 +75,7 @@ const sortByChildren = (charArray) => {
       }
     }
   });
-  console.log(charArray);
+  //console.log(charArray);
   return charArray;
 };
 
@@ -111,9 +110,8 @@ const getCourseKeys = (obj) => {
 CHALLENGE 3
 
 Write a function named checkValues that takes in an object and a value and returns true if the value is in the object.
-
-
 ------------------------------------------------------------------------------------------------ */
+
 
 const checkValues = (obj, value) => {
   // Solution code here...
@@ -146,8 +144,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 const updateNumbers = (obj) => {
   // Solution code here...
   let arr = [];
+  //entries converts this obj to an array []
   Object.entries(obj).forEach((person) => {
-    //  console.log(person);
+   //
+   // console.log("Entry: ", person);
     arr.push(`${person[0]}: ${person[1]}`);
   });
   // console.log(arr);
@@ -212,6 +212,17 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  var hasKids = false;
+  arr.forEach(person => {
+    if(Object.entries(person)[0][1] === character){
+      console.log(Object.entries(person));
+      if (Object.entries(person)[2][1].length > 0) {
+        hasKids = true;
+        //break;
+      }
+    }
+  });
+  return hasKids;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -222,18 +233,48 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
-  console.log(arr);
+  //console.log(arr);
   var total = 0;
   arr.forEach((character) => {
     total += 1;
     total += character.children.length;
-    if (character.spouse != null) {
+    if (character.spouse !== null) {
       total += 1;
     }
   });
   return total;
 };
 
+
+/*const optimalChange = (cash) => {
+  let twoDelta = 0;
+  let fiveDelta = 0;
+  var tenDelta = 0;
+
+  while(cash >= 10){
+    tenDelta += Math.floor(cash/10);
+    cash %= 10;
+  }
+  while (cash <=9 && cash > 3){
+    if(cash%2 === 0){
+      twoDelta += (cash/2);
+      cash %= 2;
+    }
+    else {
+      fiveDelta += 1;
+      cash -= 5;
+    }
+  }
+  if(cash%2=== 0 && cash>0){
+    twoDelta += 1;
+    cash %= 2;
+  }
+  if(cash > 0){
+    return "DONT WORK";
+  }
+  return {two: twoDelta, five: fiveDelta, ten: tenDelta};
+}
+console.log(optimalChange(42));*/
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
@@ -247,6 +288,14 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
+  arr.forEach(house => {
+    let name = house.house;
+    let size = house.children.length + 1;
+    if (house.spouse){size += 1;}
+    sizes.push({house: name, members: size});
+    //sizes.push({house: house.name, memebers: house.children.length + 2});
+  });
+
   return sizes;
 };
 
@@ -344,7 +393,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should return true for characters that have children", () => {
     expect(hasChildrenEntries(characters, "Eddard")).toBeTruthy();
   });
@@ -360,7 +409,7 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should return an object for each house containing the name and size", () => {
     expect(houseSize(characters)[1]).toStrictEqual({
       house: "Snow",

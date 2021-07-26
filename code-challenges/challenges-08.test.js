@@ -9,7 +9,8 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str){
   let strArr = str.split('');
-  strArr.splice(0,strArr.length-10);
+  strArr.splice(0, strArr.length-10);
+  //strArr.splice(0,strArr.length-10);
  // console.log(strArr);
   return strArr;
 
@@ -27,13 +28,8 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 const typeNum = (arr) => {
   // Solution code here...
 
-  const results = arr.filter(item => {
-   // var r = /[0-9]/; 
-   if(typeof item === "number"){
-     return item;
-   }
+  const results = arr.filter(item => !isNaN(item));
     //console.log(item.match(r));
-  });
   //console.log(results);
   return results;
 };
@@ -51,11 +47,8 @@ const containsAnd = (arr) => {
   //var reg = /and/;
  //console.log(arr);
  //console.log(arr[0].includes('and'));
-  const results = arr.filter(item => {
-    if(item.includes('and')){
-      return item;
-    }
-  });
+  const results = arr.filter(item => item.includes('and'));
+
   //console.log(results);
   return results;
 
@@ -73,11 +66,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 const oddValues = (arr) => {
   // Solution code here...
 
-  const results = arr.filter(item => {
-    if(item % 2 != 0){
-      return item;
-    }
-  });
+  const results = arr.filter(item => item % 2 !== 0);
   //console.log(results);
   return results;
 };
@@ -95,13 +84,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
-  const results = arr.filter(item => {
-    const vowls = /[aeiou]/g;
-    if(item.match(vowls)){
-      return item;
-    }
-
-  });
+  const results = arr.filter(item => item.match(/[aeiou]/g));
   //console.log(results);
   return results;
 };
@@ -120,7 +103,7 @@ const notInFirstArray = (forbiddenValues, arr) => {
 
   const results = arr.filter(item => {
     if(!forbiddenValues.includes(item)){
-      return item
+      return item;
     }
   });
   //console.log(results);

@@ -9,10 +9,13 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  const result = [];
-  arr.forEach((number) => {
+  //const result = [];
+  /*arr.forEach((number) => {
     var cubed = Math.pow(number, 3);
     result.push(cubed);
+  });*/
+  const result  = arr.map(number => {
+    return Math.pow(number,3);
   });
 
   return result;
@@ -27,8 +30,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  var result = str + " The end.";
-  return result;
+  return str+" The end.";
+   
   // Solution code here...
 };
 
@@ -47,7 +50,6 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   arr.push(arr[0]);
-  return arr;
   // Solution code here...
 };
 
@@ -59,7 +61,6 @@ Write a function that accepts an object and an integer as arguments and adds a n
 The change should be reflected in the source object that was passed in to the function. That is, the function should modify the object 'in place'.
 
 Do not use a return statement.
-
 For example:
 const octavia = { fullName: 'Octavia Estelle Butler' };
 addBirthYearProperty(octavia, 1947);
@@ -69,7 +70,6 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
   obj.yearBorn = year;
-  return obj;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +90,6 @@ const setStatusAsAuthor = (people) => {
   people.forEach((p) => {
     p.isAuthor = true;
   });
-  return people;
 };
 
 /* ------------------------------------------------------------------------------------------------

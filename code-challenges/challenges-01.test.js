@@ -10,9 +10,14 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   // Solution code here...
-  const results = [];
+  /*const results = [];
   arr.forEach(function (number) {
     results.push(number + 1);
+  });
+*/
+  const results = [];
+  arr.forEach( (number) => {
+    results.push(number+1);
   });
 
   return results;
@@ -28,8 +33,8 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   const results = [];
-  arr.forEach(function (word) {
-    results.push(word + "!");
+  arr.forEach((stringItem) => {
+    results.push(stringItem + "!");
   });
   // Solution code here...
   return results;
@@ -45,10 +50,12 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
-  const results = [];
-  arr.forEach(function (lowCase_word) {
-    results.push(lowCase_word.toUpperCase());
-  });
+  /* const results = [];
+  arr.forEach( (lower_case_word) => {
+    results.push(lower_case_word.toUpperCase());
+  });*/
+  let results = arr.map(words => { return words.toUpperCase();});
+  console.log(results);
   return results;
 };
 
@@ -69,7 +76,7 @@ const greeting = (word) => {
 
 const speaker = (words, callback) => {
   const results = [];
-  words.forEach(function (word) {
+  words.forEach( (word) => {
     results.push(callback(word));
   });
   // Solution code here...
@@ -97,10 +104,10 @@ const addValues = (arr, value) => {
   arr.push(value);
 };
 
-const addNumbers = (num, arr, times, callback) => {
+const addNumbers = (num, arr, times, addValues) => {
   // Solution code here...
   for (var i = 0; i <= times - 1; i++) {
-    callback(arr, num);
+    addValues(arr, num);
   }
   return arr;
 };
@@ -112,21 +119,24 @@ CHALLENGE 6
 Write a function named createList that takes in an array of the current store intentory.
 
 The inventory is formatted like this:
-[
+let availableItems = [
   { name: 'apples', available: true },
   { name: 'pears', available: true },
   { name: 'oranges', available: false },
   { name: 'bananas', available: true },
   { name: 'blueberries', available: false }
 ]
-
+let list = availableItems.filter((item) => item.available);
+console.log(list);
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
   // Solution code here...
   const list = [];
-  availableItems.forEach(function (item) {
+  //const list = 
+
+  availableItems.forEach( (item) => {
     //   console.log(item.available)
     if (item.available === true) {
       list.push(item.name);
@@ -154,11 +164,11 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   const fizbuz = [];
   arr.forEach((number) => {
-    if (number % 5 == 0 && number % 3 == 0) {
+    if (number % 5 === 0 && number % 3 === 0) {
       fizbuz.push("Fizz Buzz");
-    } else if (number % 3 == 0) {
+    } else if (number % 3 === 0) {
       fizbuz.push("Fizz");
-    } else if (number % 5 == 0) {
+    } else if (number % 5 === 0) {
       fizbuz.push("Buzz");
     } else {
       fizbuz.push(number);

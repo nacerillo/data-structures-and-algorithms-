@@ -7,11 +7,8 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
-  const newarr = [];
-  for (var i = 0; i < arr.length; i++) {
-    newarr.push(arr[i] + 2);
-  }
-  return newarr;
+  return arr.map(x => x+2);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,6 +120,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  return (input === "Oct" || input === "October" || input === "oct" || input === "October");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,7 +132,17 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = (str) => {
   // Solution code here...
+  //let punctArr = [".",",","!","?",";",":"];
+  let newArr = str.split(" ");
+  //console.log(newArr);
+  console.log(newArr.filter( word => {
+
+    return (word[word.length-1] !== "." && word[word.length-1] !== ",");
+    //punctArr.includes(word[word.lastIndexOf(word)]) === false;
+  }));
+  
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -314,7 +322,7 @@ xdescribe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   const lorem =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.";
 
